@@ -60,7 +60,7 @@ function AddProductPage() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/components', {
+      const response = await fetch('https://e-commerce-backend-jyg3.onrender.com/api/components', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
