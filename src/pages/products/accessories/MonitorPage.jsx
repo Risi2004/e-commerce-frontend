@@ -13,7 +13,7 @@ function MonitorPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/components?category=Monitor")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=Monitor")
       .then((res) => res.json())
       .then((data) => {
         setMonitors(data.components || []);
