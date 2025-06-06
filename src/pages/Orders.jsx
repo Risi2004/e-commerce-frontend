@@ -5,7 +5,7 @@ function Orders() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/orders")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/orders")
       .then((res) => res.json())
       .then((data) => {
         console.log("✅ Fetched orders:", data);
