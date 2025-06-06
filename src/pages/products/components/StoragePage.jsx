@@ -13,7 +13,7 @@ function StoragePage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/components?category=Storage&_=${Date.now()}`)
+    fetch(`https://e-commerce-backend-jyg3.onrender.com/api/components?category=Storage&_=${Date.now()}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch storage devices");
         return res.json();
