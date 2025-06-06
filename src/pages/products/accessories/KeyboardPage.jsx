@@ -13,7 +13,7 @@ function KeyboardPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/components?category=Keyboard")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=Keyboard")
       .then((res) => res.json())
       .then((data) => {
         setKeyboards(data.components || []);  // <-- use data.components here
