@@ -15,7 +15,7 @@ function GpuPage() {
   const [sortOrder, setSortOrder] = useState(""); // For price sorting
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/components?category=GPU")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=GPU")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch GPUs");
