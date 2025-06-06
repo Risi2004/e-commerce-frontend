@@ -13,7 +13,7 @@ function LaptopsPage() {
   const [cpu, setCpu] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/components?category=Laptop")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=Laptop")
       .then((res) => res.json())
       .then((data) => setLaptopsData(data.components || []))
       .catch((err) => {
