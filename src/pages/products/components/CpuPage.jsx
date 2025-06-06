@@ -14,7 +14,7 @@ function CpuPage() {
   const [sortOrder, setSortOrder] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/components?category=CPU")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=CPU")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch CPUs");
