@@ -16,22 +16,27 @@ function EditProduct() {
 
   const [loading, setLoading] = useState(true);
 
+  // ✅ Correct async fetch inside useEffect
   useEffect(() => {
-    const res = await fetch(`https://e-commerce-backend-jyg3.onrender.com/api/components/${id}`, {
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
+    const fetchProduct = async () => {
+      try {
+        const res = await fetch(`https://e-commerce-backend-jyg3.onrender.com/api/components/${id}`);
+        const data = await res.json();
+
+        if (res.ok && data.success) {
           setProduct(data.component);
           setLoading(false);
         } else {
           alert("Product not found");
           navigate("/admin/products");
         }
-      })
-      .catch((err) => {
-        console.error(err);
+      } catch (err) {
+        console.error("Error loading product:", err);
         alert("Error loading product");
-      });
+      }
+    };
+
+    fetchProduct();
   }, [id, navigate]);
 
   const handleChange = (e) => {
@@ -42,11 +47,12 @@ function EditProduct() {
     }));
   };
 
+  // ✅ Proper async submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`fetch(`https://e-commerce-backend-jyg3.onrender.com/api/components/${id}`)`, {
+      const res = await fetch(`https://e-commerce-backend-jyg3.onrender.com/api/components/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(product),
@@ -61,7 +67,7 @@ function EditProduct() {
         alert(`❌ Failed to update product: ${data.message}`);
       }
     } catch (err) {
-      console.error(err);
+      console.error("Update error:", err);
       alert("❌ Error updating product");
     }
   };
