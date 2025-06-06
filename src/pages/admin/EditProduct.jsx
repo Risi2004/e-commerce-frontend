@@ -17,7 +17,7 @@ function EditProduct() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/components/${id}`)
+    const res = await fetch(`https://e-commerce-backend-jyg3.onrender.com/api/components/${id}`, {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
