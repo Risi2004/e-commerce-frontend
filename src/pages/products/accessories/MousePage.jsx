@@ -13,7 +13,7 @@ function MousePage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/components?category=Mouse")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=Mouse")
       .then((res) => res.json())
       .then((data) => {
         setMice(data.components || []);
@@ -43,7 +43,7 @@ function MousePage() {
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center items-center">
-        Loading mice...
+        Loading mouse...
       </div>
     );
   }
