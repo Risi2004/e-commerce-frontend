@@ -17,7 +17,7 @@ function RamPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/api/components?category=RAM")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=RAM")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch RAM modules");
