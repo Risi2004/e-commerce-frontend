@@ -16,7 +16,7 @@ function CoolerPage() {
   const [sortOrder, setSortOrder] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/components?category=Cooler")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=Cooler")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch coolers");
         return res.json();
