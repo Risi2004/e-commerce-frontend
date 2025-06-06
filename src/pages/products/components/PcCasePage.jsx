@@ -11,7 +11,7 @@ function PcCasePage() {
   const [sortOrder, setSortOrder] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/components?category=PcCase")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=PcCase")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch PC Cases");
