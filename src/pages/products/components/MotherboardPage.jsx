@@ -16,7 +16,7 @@ function MotherboardPage() {
   const [sortOrder, setSortOrder] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/components?category=Motherboard")
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components?category=Motherboard")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch motherboards");
