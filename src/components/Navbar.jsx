@@ -187,24 +187,11 @@ function Navbar() {
                   <div className="px-4 py-2 text-gray-300">
                     Hi, <span className="text-yellow-400">{getUsername()}</span>
                   </div>
-                  <Link
-                    to="/orders"
-                    className="block px-4 py-2 text-sm hover:bg-gray-700 text-white"
-                  >
-                    Past Orders
-                  </Link>
+                  <Link to="/orders" className="block px-4 py-2 text-sm hover:bg-gray-700 text-white">Past Orders</Link>
                   {user.role === "admin" && (
-                    <Link
-                      to="/admin/dashboard"
-                      className="block px-4 py-2 text-sm text-green-400 hover:bg-gray-700"
-                    >
-                      Admin Page
-                    </Link>
+                    <Link to="/admin/dashboard" className="block px-4 py-2 text-sm text-green-400 hover:bg-gray-700">Admin Page</Link>
                   )}
-                  <button
-                    onClick={handleLogout}
-                    className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700"
-                  >
+                  <button onClick={handleLogout} className="w-full text-left px-4 py-2 text-sm text-red-400 hover:bg-gray-700">
                     Logout
                   </button>
                 </div>
@@ -215,10 +202,7 @@ function Navbar() {
               <Link to="/login" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link
-                to="/register"
-                className="border border-white px-4 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-gray-900 transition"
-              >
+              <Link to="/register" className="border border-white px-4 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-gray-900 transition">
                 Register
               </Link>
             </>
@@ -226,11 +210,11 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Slide Menu */}
+      {/* ✅ Mobile Slide Menu */}
       <div className="sm:hidden">
         <div
           className={`fixed top-16 left-0 w-64 h-full bg-gray-900 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
-            menuOpen ? 'translate-x-0' : '-translate-x-full'
+            menuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           <div className="flex flex-col p-4 space-y-4">
@@ -263,6 +247,19 @@ function Navbar() {
                 <Link to="/contact" className="text-white hover:text-yellow-400 text-lg font-medium">Contact</Link>
                 <Link to="/orders" className="text-white hover:text-yellow-400 text-lg font-medium">Past Orders</Link>
 
+                {/* ✅ Mobile Cart */}
+                <Link
+                  to="/cart"
+                  className="relative px-5 py-2 rounded-full bg-yellow-400 text-gray-900 font-semibold text-sm w-fit hover:bg-yellow-300 transition"
+                >
+                  🛒 Cart
+                  {cartItems.length > 0 && (
+                    <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                      {cartItems.length}
+                    </span>
+                  )}
+                </Link>
+
                 {user.role === "admin" && (
                   <Link to="/admin/dashboard" className="text-green-500 hover:text-green-400 text-lg font-medium">Admin Page</Link>
                 )}
@@ -275,10 +272,7 @@ function Navbar() {
                 <Link to="/login" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium">
                   Login
                 </Link>
-                <Link
-                  to="/register"
-                  className="border border-white px-4 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-gray-900 transition"
-                >
+                <Link to="/register" className="border border-white px-4 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-gray-900 transition">
                   Register
                 </Link>
               </>
