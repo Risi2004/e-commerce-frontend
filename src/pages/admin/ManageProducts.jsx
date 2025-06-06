@@ -11,7 +11,7 @@ function ManageProducts() {
 
   const fetchProducts = () => {
     setLoading(true);
-    fetch("http://localhost:5000/api/components") // ✅ corrected endpoint
+    fetch("https://e-commerce-backend-jyg3.onrender.com/api/components")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.components || []); // ✅ access 'components' from backend
